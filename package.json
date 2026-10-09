@@ -1,0 +1,31 @@
+{
+  "name": "nova-smartwatch-landing-page",
+  "version": "1.0.0",
+  "description": "NOVA Pulse X Smartwatch — Premium Responsive Product Landing Page for Web Development Minor Project",
+  "main": "index.html",
+  "scripts": {
+    "dev:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "serve": "live-server --port=3000 --entry-file=index.html",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [
+    "landing-page",
+    "smartwatch",
+    "responsive-design",
+    "tailwind-css",
+    "flexbox",
+    "css-grid",
+    "css3",
+    "frontend-project"
+  ],
+  "author": "Viresh Ijeri",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}

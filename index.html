@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA Pulse X — Premium Smartwatch Concept | Minor Project</title>
+  <meta name="description" content="NOVA Pulse X is a modern conceptual smartwatch landing page showcasing responsive web design, CSS3, Flexbox, CSS Grid, and Tailwind CSS. Built for Web Development Minor Project by Viresh Ijeri.">
+  <meta name="author" content="Viresh Ijeri">
+  <meta name="keywords" content="NOVA Pulse X, Smartwatch, Web Development Minor Project, Responsive Design, CSS Grid, Flexbox, Tailwind CSS">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Compiled Tailwind & Custom CSS3 Output -->
+  <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body class="bg-nova-bg text-nova-light antialiased selection:bg-nova-accent selection:text-white relative min-h-screen">
+
+  <!-- ==========================================================================
+       TOP EDUCATIONAL DISCLAIMER BAR (Flexbox Layout)
+       ========================================================================== -->
+  <div class="bg-nova-surface border-b border-nova-border py-2 px-4 text-xs text-nova-muted text-center flex flex-wrap items-center justify-center gap-2">
+    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-nova-accent/10 text-nova-accent font-medium border border-nova-accent/20">
+      <span class="w-1.5 h-1.5 rounded-full bg-nova-accent status-dot-pulse"></span>
+      Academic Concept
+    </span>
+    <span>Web Development Minor Project by <strong>Viresh Ijeri</strong> (2nd Year CSE) — Fictional product concept for demonstration purposes only.</span>
+  </div>
+
+  <!-- ==========================================================================
+       1. RESPONSIVE NAVIGATION BAR (Flexbox Layout with Sticky Position)
+       ========================================================================== -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between" aria-label="Main Navigation">
+      
+      <!-- Brand Logo / Wordmark (Flex item) -->
+      <a href="#hero" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent rounded-lg p-1" aria-label="NOVA Pulse X Home">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-nova-accent to-amber-600 flex items-center justify-center shadow-glow-subtle group-hover:shadow-glow-accent transition-all duration-300">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="7"></circle>
+            <polyline points="12 9 12 12 13.5 13.5"></polyline>
+            <path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl font-extrabold tracking-wider text-white group-hover:text-nova-accent transition-colors">NOVA</span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-nova-muted -mt-1">Pulse X Series</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links (Flexbox Row) -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#hero" class="desktop-nav-link text-sm font-medium text-nova-light hover:text-nova-accent transition-colors py-1">Home</a>
+        <a href="#features" class="desktop-nav-link text-sm font-medium text-nova-muted hover:text-nova-accent transition-colors py-1">Features</a>
+        <a href="#benefits" class="desktop-nav-link text-sm font-medium text-nova-muted hover:text-nova-accent transition-colors py-1">Benefits</a>
+        <a href="#showcase" class="desktop-nav-link text-sm font-medium text-nova-muted hover:text-nova-accent transition-colors py-1">Showcase</a>
+        <a href="#reviews" class="desktop-nav-link text-sm font-medium text-nova-muted hover:text-nova-accent transition-colors py-1">Reviews</a>
+        <a href="#pricing" class="desktop-nav-link text-sm font-medium text-nova-muted hover:text-nova-accent transition-colors py-1">Pricing</a>
+      </div>
+
+      <!-- Desktop CTA Button (Flex item) -->
+      <div class="hidden md:flex items-center gap-4">
+        <button type="button" class="btn-buy-demo inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-nova-accent hover:bg-nova-accentHover shadow-glow-subtle hover:shadow-glow-accent transition-all duration-300 transform active:scale-95" aria-label="Buy NOVA Pulse X (Demo)">
+          <span>Buy Now</span>
+          <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Menu Button (Accessible aria toggle) -->
+      <div class="flex md:hidden">
+        <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-nova-muted hover:text-white hover:bg-nova-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open Mobile Navigation Menu">
+          <!-- Hamburger Icon -->
+          <svg id="menu-icon" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <!-- Close Icon (Hidden by default) -->
+          <svg id="close-icon" class="w-6 h-6 hidden text-nova-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer (Hidden by default, Flex column when open) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-20 bg-nova-surface/98 backdrop-blur-2xl border-b border-nova-border p-6 flex-col gap-4 shadow-2xl z-50">
+      <div class="flex flex-col gap-2">
+        <a href="#hero" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-white hover:bg-nova-elevated hover:text-nova-accent transition-colors">Home</a>
+        <a href="#features" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-nova-muted hover:bg-nova-elevated hover:text-nova-accent transition-colors">Features</a>
+        <a href="#benefits" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-nova-muted hover:bg-nova-elevated hover:text-nova-accent transition-colors">Benefits</a>
+        <a href="#showcase" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-nova-muted hover:bg-nova-elevated hover:text-nova-accent transition-colors">Showcase</a>
+        <a href="#reviews" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-nova-muted hover:bg-nova-elevated hover:text-nova-accent transition-colors">Reviews</a>
+        <a href="#pricing" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-nova-muted hover:bg-nova-elevated hover:text-nova-accent transition-colors">Pricing</a>
+      </div>
+      <div class="pt-4 border-t border-nova-border">
+        <button type="button" class="btn-buy-demo w-full py-3.5 px-4 rounded-xl text-center font-bold text-white bg-nova-accent hover:bg-nova-accentHover shadow-glow-accent transition-all flex items-center justify-center gap-2">
+          <span>Buy Now — ₹7,999</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==========================================================================
+         2. HERO SECTION (2-Column Responsive Layout with Flexbox & Grid)
+         ========================================================================== -->
+    <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+      <!-- Ambient Glow Orbs -->
+      <div class="glow-spot-orange -top-20 left-1/4 -translate-x-1/2"></div>
+      <div class="glow-spot-orange bottom-10 right-10 opacity-40"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Column 1: Copy & Call-to-Actions (Desktop 7 cols) -->
+          <div class="lg:col-span-7 flex flex-col items-start text-left space-y-6">
+            
+            <!-- Category Label Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-nova-surface border border-nova-border shadow-inner-glow">
+              <span class="w-2 h-2 rounded-full bg-nova-accent"></span>
+              <span class="text-xs font-bold uppercase tracking-wider text-nova-accent">INTRODUCING NOVA PULSE X</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.08] gradient-text">
+              TIME TO MOVE BEYOND ORDINARY.
+            </h1>
+
+            <!-- Description -->
+            <p class="text-base sm:text-lg md:text-xl text-nova-muted max-w-2xl leading-relaxed">
+              Meet <strong class="text-white font-semibold">NOVA Pulse X</strong> — a modern smartwatch concept designed to bring everyday convenience, activity insights, and personal style together.
+            </p>
+
+            <!-- Pricing Callout & Highlights Badge Row (Flexbox) -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <div class="flex items-baseline gap-2 bg-nova-surface/90 border border-nova-border px-4 py-2 rounded-xl">
+                <span class="text-xs text-nova-muted uppercase font-medium">Concept Price</span>
+                <span class="text-2xl font-black text-white">₹7,999</span>
+                <span class="text-xs line-through text-nova-muted/70">₹14,999</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-green-400 bg-green-950/40 border border-green-800/40 px-3 py-2 rounded-xl font-medium">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span>Academic Demo Project</span>
+              </div>
+            </div>
+
+            <!-- Action Button Group (Flexbox Row) -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
+              <button type="button" class="btn-buy-demo inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold text-white bg-nova-accent hover:bg-nova-accentHover shadow-glow-accent hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+                <span>Buy Now — ₹7,999</span>
+                <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <a href="#features" class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-nova-light bg-nova-surface hover:bg-nova-elevated border border-nova-border hover:border-nova-accent/40 transition-all duration-300">
+                <span>Explore Features</span>
+                <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+              </a>
+            </div>
+
+            <!-- Three Concise Product Highlights (Flexbox) -->
+            <div class="grid grid-cols-3 gap-3 pt-6 border-t border-nova-border/60 w-full">
+              <div class="flex flex-col">
+                <span class="text-xl sm:text-2xl font-bold text-white">1.95"</span>
+                <span class="text-xs text-nova-muted mt-0.5">Retina AMOLED</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xl sm:text-2xl font-bold text-white">Titanium</span>
+                <span class="text-xs text-nova-muted mt-0.5">Aerospace Chassis</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xl sm:text-2xl font-bold text-white">14-Day</span>
+                <span class="text-xs text-nova-muted mt-0.5">Smart Power</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 2: High-Quality Product Image Display (Desktop 5 cols) -->
+          <div class="lg:col-span-5 relative flex items-center justify-center">
+            <!-- Decorative concentric ring borders -->
+            <div class="absolute inset-0 rounded-full border border-nova-border/40 scale-110 pointer-events-none"></div>
+            <div class="absolute inset-0 rounded-full border border-nova-accent/20 scale-95 pointer-events-none animate-pulse-subtle"></div>
+            
+            <!-- Hero Watch Card Container with Glassmorphism -->
+            <div class="relative rounded-3xl p-4 bg-gradient-to-b from-nova-surface/90 to-nova-bg/90 border border-nova-border shadow-card-dark overflow-hidden group">
+              <div class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-nova-bg/80 backdrop-blur-md border border-nova-border text-[11px] font-semibold text-nova-accent flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-nova-accent animate-ping"></span>
+                <span>Live UI Concept</span>
+              </div>
+              
+              <img 
+                src="./assets/images/nova-hero.jpg" 
+                alt="NOVA Pulse X Smartwatch front view displaying biometric heart rate and orange ambient glow" 
+                class="w-full h-auto max-w-md mx-auto rounded-2xl object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                width="600" 
+                height="600"
+                loading="eager"
+              >
+
+              <!-- Subtle bottom metadata overlay -->
+              <div class="mt-3 pt-3 border-t border-nova-border flex items-center justify-between text-xs text-nova-muted px-2">
+                <span class="flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 text-nova-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                  Continuous Sensor Flow
+                </span>
+                <span class="font-mono text-nova-light font-semibold">PulseOS v2.4</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. PRODUCT HIGHLIGHTS BAR (CSS Grid & Flexbox)
+         ========================================================================== -->
+    <section class="py-12 bg-nova-surface/60 border-y border-nova-border relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Grid layout: 1 col on mobile, 2 col on tablet, 4 col on desktop -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Highlight 1 -->
+          <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+            <div class="p-3 rounded-xl bg-nova-elevated border border-nova-border text-nova-accent flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Everyday Activity</h3>
+              <p class="text-xs text-nova-muted mt-1 leading-relaxed">Conceptual dashboard to monitor steps, motion trends, and daily movement rhythms.</p>
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+            <div class="p-3 rounded-xl bg-nova-elevated border border-nova-border text-nova-accent flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Smart Notifications</h3>
+              <p class="text-xs text-nova-muted mt-1 leading-relaxed">Subtle haptic cues for incoming calls, messages, reminders, and calendar alerts.</p>
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+            <div class="p-3 rounded-xl bg-nova-elevated border border-nova-border text-nova-accent flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Custom Watch Faces</h3>
+              <p class="text-xs text-nova-muted mt-1 leading-relaxed">Easily swap between high-energy kinetic dials, analog dials, and data metrics.</p>
+            </div>
+          </div>
+
+          <!-- Highlight 4 -->
+          <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+            <div class="p-3 rounded-xl bg-nova-elevated border border-nova-border text-nova-accent flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Modern Comfort</h3>
+              <p class="text-xs text-nova-muted mt-1 leading-relaxed">Featherlight titanium casing matched with breathable fluoroelastomer straps.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. FEATURES SECTION (CSS Grid 4-Card Responsive Grid)
+         ========================================================================== -->
+    <section id="features" class="py-20 md:py-28 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-nova-accent">CORE ARCHITECTURE</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+            EVERYTHING YOU NEED. NOTHING YOU DON'T.
+          </h2>
+          <p class="text-base sm:text-lg text-nova-muted">
+            Thoughtful features meet a clean, everyday design.
+          </p>
+        </div>
+
+        <!-- Features CSS Grid Layout: 1 col mobile, 2 cols tablet, 4 cols desktop -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Card 1: Fitness Insights -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-nova-accent/10 border border-nova-accent/30 text-nova-accent flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-nova-accent group-hover:text-white transition-all duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-nova-accent">FEATURE 01</span>
+              <h3 class="text-xl font-bold text-white mt-1 mb-3">Fitness Insights</h3>
+              <p class="text-sm text-nova-muted leading-relaxed">
+                A conceptual dashboard providing clear daily movement visualization, estimated calorie burn metrics, and weekly habit trends.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-nova-border/60 flex items-center justify-between text-xs text-nova-muted">
+              <span>Interactive HUD</span>
+              <span class="text-nova-accent font-semibold">PulseOS Hub</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Stay Connected -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-nova-accent/10 border border-nova-accent/30 text-nova-accent flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-nova-accent group-hover:text-white transition-all duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-nova-accent">FEATURE 02</span>
+              <h3 class="text-xl font-bold text-white mt-1 mb-3">Stay Connected</h3>
+              <p class="text-sm text-nova-muted leading-relaxed">
+                Receive seamless message previews, incoming caller ID, quick canned replies, and sync priority alerts directly on your wrist.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-nova-border/60 flex items-center justify-between text-xs text-nova-muted">
+              <span>Low-Latency Sync</span>
+              <span class="text-nova-accent font-semibold">Dual Bluetooth</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Your Personal Style -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-nova-accent/10 border border-nova-accent/30 text-nova-accent flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-nova-accent group-hover:text-white transition-all duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                </svg>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-nova-accent">FEATURE 03</span>
+              <h3 class="text-xl font-bold text-white mt-1 mb-3">Your Personal Style</h3>
+              <p class="text-sm text-nova-muted leading-relaxed">
+                Choose from over 50 modular watch face themes with customizable widgets, neon accents, complications, and always-on displays.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-nova-border/60 flex items-center justify-between text-xs text-nova-muted">
+              <span>Modular Themes</span>
+              <span class="text-nova-accent font-semibold">50+ Faces</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Made For Everyday -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-nova-accent/10 border border-nova-accent/30 text-nova-accent flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-nova-accent group-hover:text-white transition-all duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-nova-accent">FEATURE 04</span>
+              <h3 class="text-xl font-bold text-white mt-1 mb-3">Made For Everyday</h3>
+              <p class="text-sm text-nova-muted leading-relaxed">
+                Sculpted from corrosion-resistant titanium with scratch-shield sapphire crystal, engineered to resist everyday knocks and scrapes.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-nova-border/60 flex items-center justify-between text-xs text-nova-muted">
+              <span>Sapphire &amp; Ti</span>
+              <span class="text-nova-accent font-semibold">Ultra Tough</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. BENEFITS SECTION (Flexbox / CSS Grid Media-Text Alignment)
+         ========================================================================== -->
+    <section id="benefits" class="py-20 md:py-28 bg-nova-surface/40 border-t border-nova-border relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Image Column (5 Cols) -->
+          <div class="lg:col-span-5 order-2 lg:order-1 relative">
+            <div class="relative rounded-3xl p-3 bg-nova-surface border border-nova-border shadow-card-dark">
+              <img 
+                src="./assets/images/nova-showcase.jpg" 
+                alt="NOVA Pulse X detailed side angle showing precision rotary crown and AMOLED display" 
+                class="w-full h-auto rounded-2xl object-cover"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <div class="absolute -bottom-4 -right-4 p-4 rounded-2xl bg-nova-elevated border border-nova-accent/40 shadow-glow-subtle flex items-center gap-3">
+                <div class="w-3 h-3 rounded-full bg-nova-accent status-dot-pulse"></div>
+                <div class="text-xs">
+                  <p class="font-bold text-white">Ergonomic Architecture</p>
+                  <p class="text-nova-muted">All-day wrist comfort</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefits Content Column (7 Cols) -->
+          <div class="lg:col-span-7 order-1 lg:order-2 space-y-8">
+            <div class="space-y-3">
+              <span class="text-xs font-bold uppercase tracking-widest text-nova-accent">DESIGNED AROUND YOU</span>
+              <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                TECHNOLOGY THAT FITS YOUR DAY.
+              </h2>
+              <p class="text-base text-nova-muted leading-relaxed">
+                Smart tech should blend into your life with effortless intuition. NOVA Pulse X bridges modern hardware craft with clear, glanceable software interactions.
+              </p>
+            </div>
+
+            <!-- 4 Structured Benefits List Items (Flexbox items) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+              
+              <div class="p-5 rounded-2xl bg-nova-surface border border-nova-border hover:border-nova-accent/30 transition-colors">
+                <div class="w-8 h-8 rounded-lg bg-nova-accent/10 text-nova-accent flex items-center justify-center font-bold text-sm mb-3">
+                  01
+                </div>
+                <h3 class="text-base font-bold text-white mb-1.5">Glanceable Daily Data</h3>
+                <p class="text-xs text-nova-muted leading-relaxed">
+                  See everyday activity information at a single glance with bright, ultra-crisp AMOLED high contrast dials.
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-nova-surface border border-nova-border hover:border-nova-accent/30 transition-colors">
+                <div class="w-8 h-8 rounded-lg bg-nova-accent/10 text-nova-accent flex items-center justify-center font-bold text-sm mb-3">
+                  02
+                </div>
+                <h3 class="text-base font-bold text-white mb-1.5">Convenient Notifications</h3>
+                <p class="text-xs text-nova-muted leading-relaxed">
+                  Access routine notifications and incoming messages more conveniently without constantly reaching for your phone.
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-nova-surface border border-nova-border hover:border-nova-accent/30 transition-colors">
+                <div class="w-8 h-8 rounded-lg bg-nova-accent/10 text-nova-accent flex items-center justify-center font-bold text-sm mb-3">
+                  03
+                </div>
+                <h3 class="text-base font-bold text-white mb-1.5">Personalized Aesthetics</h3>
+                <p class="text-xs text-nova-muted leading-relaxed">
+                  Personalize the interface color palette, complications, and typography to seamlessly match your daily attire.
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-nova-surface border border-nova-border hover:border-nova-accent/30 transition-colors">
+                <div class="w-8 h-8 rounded-lg bg-nova-accent/10 text-nova-accent flex items-center justify-center font-bold text-sm mb-3">
+                  04
+                </div>
+                <h3 class="text-base font-bold text-white mb-1.5">Conceptual Health Trends</h3>
+                <p class="text-xs text-nova-muted leading-relaxed">
+                  Explore activity trends through a conceptual interface engineered with clean typography and intuitive graphs.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Disclaimer note -->
+            <p class="text-xs text-nova-muted/70 italic">
+              * Note: All biometric metrics, sensors, and battery specifications shown are fictional design concepts crafted for academic demonstration.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. PRODUCT SHOWCASE & INTERACTIVE DIAL SELECTOR (CSS Grid)
+         ========================================================================== -->
+    <section id="showcase" class="py-20 md:py-28 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Showcase Heading -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-nova-accent">STUDIO SHOWCASE</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+            METICULOUS CRAFTSMANSHIP.
+          </h2>
+          <p class="text-base text-nova-muted">
+            Explore the precision engineered details, tactile crown, and dynamic watch dial themes.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Interactive Preview Card (7 cols) -->
+          <div class="lg:col-span-7 bg-nova-surface rounded-3xl p-6 sm:p-8 border border-nova-border shadow-card-dark relative">
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-nova-border">
+              <div>
+                <h3 id="face-title" class="text-lg font-bold text-white">Amber Minimalist Analog</h3>
+                <p id="face-desc" class="text-xs text-nova-muted mt-0.5">Elegant neon indices with precision hour markers tailored for formal settings.</p>
+              </div>
+              <span class="hidden sm:inline-block text-xs font-mono px-2.5 py-1 rounded bg-nova-elevated border border-nova-border text-nova-accent">Interactive Switcher</span>
+            </div>
+
+            <!-- Dynamic Image Container -->
+            <div class="relative rounded-2xl overflow-hidden bg-nova-bg flex items-center justify-center p-4">
+              <img 
+                id="showcase-main-img" 
+                src="./assets/images/nova-faces.jpg" 
+                alt="Interactive Watch Face showcase view" 
+                class="w-full max-h-[420px] object-contain rounded-xl transition-opacity duration-300"
+                width="600"
+                height="600"
+              >
+            </div>
+
+            <!-- Face Selector Buttons (Flexbox Row) -->
+            <div class="mt-6 flex flex-wrap gap-3 items-center justify-center sm:justify-start">
+              <span class="text-xs font-semibold text-nova-muted mr-1">Select Dial:</span>
+              <button type="button" data-face="amber-analog" class="face-selector-btn px-4 py-2 rounded-xl text-xs font-semibold border border-nova-accent text-white bg-nova-elevated transition-all">
+                Amber Analog
+              </button>
+              <button type="button" data-face="cyber-metric" class="face-selector-btn px-4 py-2 rounded-xl text-xs font-semibold border border-nova-border text-nova-muted hover:text-white transition-all">
+                Cyber HUD
+              </button>
+              <button type="button" data-face="dark-slate" class="face-selector-btn px-4 py-2 rounded-xl text-xs font-semibold border border-nova-border text-nova-muted hover:text-white transition-all">
+                Obsidian Chrono
+              </button>
+            </div>
+          </div>
+
+          <!-- 3 Visual Design Highlights Column (5 cols) -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-lg bg-nova-accent/10 text-nova-accent flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-white">Aero-Grade Titanium Bezel</h3>
+              </div>
+              <p class="text-sm text-nova-muted leading-relaxed">
+                Precision CNC-machined titanium housing offers remarkable structural rigidity while keeping the total weight exceptionally light.
+              </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-lg bg-nova-accent/10 text-nova-accent flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-white">Curved Sapphire Crystal</h3>
+              </div>
+              <p class="text-sm text-nova-muted leading-relaxed">
+                Diamond-cut scratch resistance with anti-reflective coating delivers crystal-clear visibility even under intense midday sunlight.
+              </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-lg bg-nova-accent/10 text-nova-accent flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-white">Tactile Rotary Navigation</h3>
+              </div>
+              <p class="text-sm text-nova-muted leading-relaxed">
+                A grooved haptic crown provides precise analog-feel scrolling through messages, widget stacks, and configuration menus.
+              </p>
+            </div>
+
+            <div class="pt-2">
+              <a href="#pricing" class="inline-flex items-center gap-2 text-sm font-bold text-nova-accent hover:text-nova-accentHover transition-colors">
+                <span>View Concept Pricing &amp; Editions</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. TESTIMONIALS / USER PERSONAS SECTION (CSS Grid 3 Cards)
+         ========================================================================== -->
+    <section id="reviews" class="py-20 md:py-28 bg-nova-surface/40 border-y border-nova-border relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Heading -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-nova-accent">CONCEPT FEEDBACK &amp; PERSONAS</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+            MADE FOR EVERYDAY MOMENTUM.
+          </h2>
+          <p class="text-base text-nova-muted">
+            Sample user personas exploring how NOVA Pulse X fits diverse daily lifestyles.
+          </p>
+          <div class="inline-block px-3 py-1 rounded-full bg-nova-elevated border border-nova-border text-[11px] text-nova-muted">
+            * Sample simulated testimonials created for educational concept presentation
+          </div>
+        </div>
+
+        <!-- 3-Column CSS Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Testimonial 1 -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+            <div>
+              <!-- Star Rating Indicator -->
+              <div class="flex items-center gap-1 text-amber-400 mb-4" aria-label="Rating: 5 out of 5 stars">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+              <p class="text-sm text-nova-light leading-relaxed italic">
+                "The UI design feels astonishingly refined. Having quick glanceable activity rings during campus workouts keeps me on track without phone distraction."
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-3 pt-6 mt-6 border-t border-nova-border/60">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-nova-accent to-amber-500 text-white font-bold flex items-center justify-center text-sm">
+                AS
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Aarav Sharma</h4>
+                <p class="text-xs text-nova-muted">Computer Science Student, Bengaluru</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-1 text-amber-400 mb-4" aria-label="Rating: 5 out of 5 stars">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+              <p class="text-sm text-nova-light leading-relaxed italic">
+                "The titanium aesthetic combined with the amber neon accents gives it a look comparable to ultra-luxury wearable gear. Truly stellar concept!"
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-3 pt-6 mt-6 border-t border-nova-border/60">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 text-white font-bold flex items-center justify-center text-sm">
+                SP
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Sneha Patel</h4>
+                <p class="text-xs text-nova-muted">UI/UX Designer, Hyderabad</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-1 text-amber-400 mb-4" aria-label="Rating: 5 out of 5 stars">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+              <p class="text-sm text-nova-light leading-relaxed italic">
+                "As a runner, having customizable metrics on an ultra-responsive bright display is essential. This landing page captures that modern athletic spirit perfectly."
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-3 pt-6 mt-6 border-t border-nova-border/60">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-600 text-white font-bold flex items-center justify-center text-sm">
+                RM
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Rohan Mehta</h4>
+                <p class="text-xs text-nova-muted">Marathon Enthusiast, Pune</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. PRICING & CALL TO ACTION SECTION (CSS Grid & Flexbox)
+         ========================================================================== -->
+    <section id="pricing" class="py-20 md:py-28 relative overflow-hidden">
+      <!-- Background Ambient Glow -->
+      <div class="glow-spot-orange top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+          <span class="text-xs font-bold uppercase tracking-widest text-nova-accent">CONCEPT PRICING</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+            EXPERIENCE NEXT-GEN WEARABLE TECH.
+          </h2>
+          <p class="text-base text-nova-muted">
+            Transparent conceptual pricing for the complete NOVA Pulse X setup.
+          </p>
+        </div>
+
+        <!-- Featured Pricing Card (Max Width Center) -->
+        <div class="max-w-4xl mx-auto bg-gradient-to-b from-nova-surface via-nova-surface to-nova-bg rounded-3xl border-2 border-nova-accent/40 shadow-glow-accent p-8 sm:p-12 relative">
+          
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-nova-accent text-white font-bold text-xs uppercase tracking-wider shadow-lg">
+            Featured Minor Project Edition
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left Info Column (7 cols) -->
+            <div class="md:col-span-7 space-y-6">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-nova-accent uppercase tracking-wider">FLAGSHIP CONCEPT</span>
+                </div>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">NOVA Pulse X</h3>
+                <p class="text-sm text-nova-muted mt-2 leading-relaxed">
+                  Includes Matte Titanium Case, Fluoroelastomer Sport Strap, Magnetic Fast-Charge Dock, and PulseOS Lifetime Updates.
+                </p>
+              </div>
+
+              <!-- 3 Concise Feature Highlights (Flexbox) -->
+              <ul class="space-y-3 pt-2">
+                <li class="flex items-center gap-3 text-sm text-nova-light">
+                  <div class="w-5 h-5 rounded-full bg-nova-accent/20 text-nova-accent flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <span>1.95" Ultra Retina Curved AMOLED (1000 nits)</span>
+                </li>
+                <li class="flex items-center gap-3 text-sm text-nova-light">
+                  <div class="w-5 h-5 rounded-full bg-nova-accent/20 text-nova-accent flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <span>Continuous Biometric HUD &amp; Activity Tracking</span>
+                </li>
+                <li class="flex items-center gap-3 text-sm text-nova-light">
+                  <div class="w-5 h-5 rounded-full bg-nova-accent/20 text-nova-accent flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <span>Aerospace Grade Titanium with Sapphire Crystal</span>
+                </li>
+              </ul>
+
+              <!-- Academic Notice -->
+              <div class="p-3.5 rounded-xl bg-nova-elevated/70 border border-nova-border text-xs text-nova-muted flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-nova-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span><strong>Educational Project Notice:</strong> Clicking "Buy Now" triggers an academic demo modal. No real financial payments or orders are accepted.</span>
+              </div>
+            </div>
+
+            <!-- Right Price & CTA Box (5 cols) -->
+            <div class="md:col-span-5 flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-nova-bg/90 border border-nova-border">
+              <span class="text-xs font-semibold text-nova-muted uppercase tracking-wider">Concept Value</span>
+              <div class="flex items-baseline justify-center gap-2 mt-2 mb-1">
+                <span class="text-4xl sm:text-5xl font-black text-white">₹7,999</span>
+              </div>
+              <span class="text-xs text-nova-muted line-through mb-6">M.R.P: ₹14,999 (46% OFF Concept)</span>
+
+              <div class="w-full space-y-3">
+                <button type="button" class="btn-buy-demo w-full py-4 px-6 rounded-xl font-bold text-white bg-nova-accent hover:bg-nova-accentHover shadow-glow-accent transform active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
+                  <span>Buy Now (Demo)</span>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+                <a href="#features" class="block w-full py-3 px-6 rounded-xl font-semibold text-xs text-nova-muted hover:text-white bg-nova-surface hover:bg-nova-elevated border border-nova-border transition-colors">
+                  Explore Features
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. FAQ SECTION (Accessible Accordion with Keyboard Support)
+         ========================================================================== -->
+    <section id="faq" class="py-20 md:py-28 bg-nova-surface/40 border-t border-nova-border relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Heading -->
+        <div class="text-center space-y-4 mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-nova-accent">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+            QUESTIONS &amp; ANSWERS.
+          </h2>
+          <p class="text-base text-nova-muted">
+            Clear, honest answers regarding the NOVA Pulse X minor project.
+          </p>
+        </div>
+
+        <!-- Accessible Accordion Container -->
+        <div class="space-y-4" role="region" aria-label="FAQ Accordion">
+          
+          <!-- FAQ Item 1 -->
+          <div class="faq-item rounded-2xl border border-nova-border bg-nova-surface transition-all duration-300">
+            <button type="button" class="faq-button w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent rounded-2xl" aria-expanded="false" aria-controls="faq-ans-1">
+              <span class="text-base sm:text-lg font-bold text-white">1. What is NOVA Pulse X?</span>
+              <span class="faq-icon text-nova-muted transition-transform duration-300 flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </span>
+            </button>
+            <div id="faq-ans-1" class="faq-content px-6 text-sm text-nova-muted leading-relaxed" role="region">
+              <div class="pb-5 pt-1 border-t border-nova-border/40">
+                NOVA Pulse X is a conceptual premium smartwatch landing page developed as a Web Development Week 02 Minor Project by <strong>Viresh Ijeri</strong> (2nd Year Computer Science Engineering). It demonstrates clean typography, responsive layout techniques, and modern frontend architecture.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item rounded-2xl border border-nova-border bg-nova-surface transition-all duration-300">
+            <button type="button" class="faq-button w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent rounded-2xl" aria-expanded="false" aria-controls="faq-ans-2">
+              <span class="text-base sm:text-lg font-bold text-white">2. What features does this concept demonstrate?</span>
+              <span class="faq-icon text-nova-muted transition-transform duration-300 flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </span>
+            </button>
+            <div id="faq-ans-2" class="faq-content px-6 text-sm text-nova-muted leading-relaxed" role="region">
+              <div class="pb-5 pt-1 border-t border-nova-border/40">
+                This project demonstrates effective CSS3 animations, CSS Grid for multi-card layouts, Flexbox for alignment, Tailwind CSS responsive utility classes, accessible interactive JavaScript components (hamburger menu, accordion, interactive dial switcher, modal), and mobile-first responsive design.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item rounded-2xl border border-nova-border bg-nova-surface transition-all duration-300">
+            <button type="button" class="faq-button w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent rounded-2xl" aria-expanded="false" aria-controls="faq-ans-3">
+              <span class="text-base sm:text-lg font-bold text-white">3. Is this a real product available for purchase?</span>
+              <span class="faq-icon text-nova-muted transition-transform duration-300 flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </span>
+            </button>
+            <div id="faq-ans-3" class="faq-content px-6 text-sm text-nova-muted leading-relaxed" role="region">
+              <div class="pb-5 pt-1 border-t border-nova-border/40">
+                No. NOVA is entirely a fictional brand created for academic and educational purposes. No real hardware, commercial transactions, payment gateways, or customer orders exist. Clicking "Buy Now" opens an educational explanation dialog.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item rounded-2xl border border-nova-border bg-nova-surface transition-all duration-300">
+            <button type="button" class="faq-button w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent rounded-2xl" aria-expanded="false" aria-controls="faq-ans-4">
+              <span class="text-base sm:text-lg font-bold text-white">4. Which technologies were used to build this landing page?</span>
+              <span class="faq-icon text-nova-muted transition-transform duration-300 flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </span>
+            </button>
+            <div id="faq-ans-4" class="faq-content px-6 text-sm text-nova-muted leading-relaxed" role="region">
+              <div class="pb-5 pt-1 border-t border-nova-border/40">
+                The tech stack consists of semantic HTML5, Tailwind CSS v3 CLI build workflow, custom CSS3 properties &amp; glassmorphism, CSS Flexbox &amp; CSS Grid, and lightweight Vanilla JavaScript without heavy external frameworks or backend dependencies.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       10. POLISHED FOOTER (Responsive Flexbox & Grid)
+       ========================================================================== -->
+  <footer class="bg-nova-bg border-t border-nova-border py-16 text-nova-muted">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-nova-border/60">
+        
+        <!-- Brand Summary Column (5 cols) -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-nova-accent to-amber-600 flex items-center justify-center text-white font-black text-lg">
+              N
+            </div>
+            <span class="text-2xl font-extrabold text-white tracking-wider">NOVA</span>
+          </div>
+          <p class="text-sm text-nova-muted max-w-sm leading-relaxed">
+            NOVA Pulse X is a modern conceptual smartwatch landing page engineered to showcase responsive frontend design, modern typography, CSS Grid, and Flexbox layouts.
+          </p>
+          <div class="text-xs text-nova-muted">
+            <p><strong>Student:</strong> Viresh Ijeri</p>
+            <p><strong>Department:</strong> Computer Science &amp; Engineering</p>
+            <p><strong>Course:</strong> Web Development Minor Project (Week 02)</p>
+          </div>
+        </div>
+
+        <!-- Quick Navigation Column (3 cols) -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#hero" class="hover:text-nova-accent transition-colors">Home &amp; Hero</a></li>
+            <li><a href="#features" class="hover:text-nova-accent transition-colors">Core Features</a></li>
+            <li><a href="#benefits" class="hover:text-nova-accent transition-colors">Benefits &amp; Lifestyle</a></li>
+            <li><a href="#showcase" class="hover:text-nova-accent transition-colors">Watch Dial Showcase</a></li>
+            <li><a href="#pricing" class="hover:text-nova-accent transition-colors">Concept Pricing</a></li>
+            <li><a href="#faq" class="hover:text-nova-accent transition-colors">FAQ &amp; Architecture</a></li>
+          </ul>
+        </div>
+
+        <!-- Evaluation Criteria Checklist Column (4 cols) -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Evaluation Highlights</h4>
+          <ul class="space-y-2 text-xs text-nova-muted">
+            <li class="flex items-center gap-2">
+              <span class="text-nova-accent font-bold">✓</span> Semantic HTML5 &amp; Accessibility (ARIA)
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-nova-accent font-bold">✓</span> Pure Flexbox for Navigation &amp; Header
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-nova-accent font-bold">✓</span> CSS Grid for 4-Card Features &amp; Showcase
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-nova-accent font-bold">✓</span> Tailwind CSS Utility System &amp; Build Setup
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-nova-accent font-bold">✓</span> Vanilla JavaScript Interactive Components
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright & Academic Legal Notice -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-nova-muted">
+        <p>© 2026 NOVA Concept Project. Designed &amp; Developed by <strong>Viresh Ijeri</strong> for educational assessment.</p>
+        <p class="text-nova-muted/80">Fictional brand concept • No commercial affiliation • All rights reserved</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       INTERACTIVE DEMO PURCHASE MODAL (Vanilla JS Accessible Dialog)
+       ========================================================================== -->
+  <div id="demo-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <!-- Dark Backdrop Overlay -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"></div>
+    
+    <!-- Modal Card -->
+    <div class="relative bg-nova-surface border-2 border-nova-accent/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-glow-accent z-10 space-y-6 text-center transform transition-all">
+      
+      <!-- Close Icon Button -->
+      <button id="modal-close-btn" type="button" class="absolute top-4 right-4 p-2 text-nova-muted hover:text-white rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent" aria-label="Close dialog">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Badge & Icon -->
+      <div class="mx-auto w-14 h-14 rounded-2xl bg-nova-accent/15 border border-nova-accent/30 text-nova-accent flex items-center justify-center">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </div>
+
+      <div class="space-y-2">
+        <h3 id="modal-title" class="text-2xl font-bold text-white">Educational Demo Notice</h3>
+        <p class="text-sm text-nova-muted leading-relaxed">
+          Thanks for your interest in <strong>NOVA Pulse X</strong>! This website is an educational concept project created by <strong>Viresh Ijeri</strong> for Web Development Minor Project evaluation.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-nova-bg border border-nova-border text-left space-y-2 text-xs">
+        <div class="flex justify-between text-nova-light">
+          <span>Product:</span>
+          <span class="font-bold">NOVA Pulse X (Concept)</span>
+        </div>
+        <div class="flex justify-between text-nova-light">
+          <span>Concept Price:</span>
+          <span class="font-bold text-nova-accent">₹7,999</span>
+        </div>
+        <div class="flex justify-between text-nova-muted">
+          <span>Status:</span>
+          <span>Educational Mockup (No real checkout)</span>
+        </div>
+      </div>
+
+      <div class="pt-2">
+        <button id="modal-understood-btn" type="button" class="w-full py-3.5 px-6 rounded-xl font-bold text-white bg-nova-accent hover:bg-nova-accentHover shadow-glow-subtle transition-all duration-200">
+          Got it, Continue Exploring!
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="./src/main.js"></script>
+</body>
+</html>
